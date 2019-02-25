@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="printer" class="lab1.example.MessagePrinter">
+        <property name="message" value="Hello world"/>
+    </bean>
+    
+    <bean id="injectIntPostProcessor" class="lab1.example.InjectIntPostProcessor"/>
+</beans>
