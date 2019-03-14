@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="printer" class="lab3.practice.MessagePrinter">
+        <property name="message" value="Hello world"/>
+    </bean>
+
+    <bean id="performanceLoggerBeanPostProcessor" class="lab3.practice.PerformanceLoggerBeanPostProcessor"/>
+</beans>
