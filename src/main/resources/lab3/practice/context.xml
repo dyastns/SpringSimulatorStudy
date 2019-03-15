@@ -5,4 +5,6 @@
     </bean>
 
     <bean id="performanceLoggerBeanPostProcessor" class="lab3.practice.PerformanceLoggerBeanPostProcessor"/>
+
+    <bean id="transactionalBeanPostProcessor" class="lab3.practice.TransactionalBeanPostProcessor"/>
 </beans>

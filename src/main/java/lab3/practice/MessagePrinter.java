@@ -4,6 +4,7 @@ package lab3.practice;
 public class MessagePrinter implements Printer {
     private String message;
 
+    @Transactional
     public void print() {
         try {
             System.out.println(message);

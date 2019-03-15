@@ -9,20 +9,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PerformanceLoggerBeanPostProcessor implements BeanPostProcessor {
-    Map<String, Class<?>> originalBeanMap = new HashMap<>();
+    Map<String, Class<?>> originalClassMap = new HashMap<>();
 
     public Object postProcessBeforeInitialization(Object bean, String beanName) {
         Class<?> clazz = bean.getClass();
 
         if (clazz.isAnnotationPresent(Logger.class)) {
-            originalBeanMap.put(beanName, clazz);
+            originalClassMap.put(beanName, clazz);
         }
 
         return bean;
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) {
-        Class<?> clazz = originalBeanMap.get(beanName);
+        Class<?> clazz = originalClassMap.get(beanName);
 
         if (clazz != null) {
             return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
